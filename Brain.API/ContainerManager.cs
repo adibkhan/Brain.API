@@ -1,4 +1,6 @@
 ﻿using Funq;
+using Brain.API.Managers.Interfaces;
+using Brain.API.Managers;
 
 namespace Brain.API
 {
@@ -6,7 +8,9 @@ namespace Brain.API
     {
         public static void Register (Container container)
         {
+            container.Register<IConfigManager>(x => new ConfigManager());
 
+            container.Register<IBrainManager>(x => new BrainManager(x.Resolve<IConfigManager>()));
         }
 
     }

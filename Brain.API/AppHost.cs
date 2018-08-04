@@ -14,6 +14,7 @@ namespace Brain.API
         public override void Configure(Container container)
         {
             InitializePlugins(container);
+            ContainerManager.Register(container);
         }
 
         private void InitializePlugins(Container container)

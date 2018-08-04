@@ -107,6 +107,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Brain.API.Managers\Brain.API.Managers.csproj">
+      <Project>{781b05f8-b6c4-4846-8b28-3d647fcc5e9f}</Project>
+      <Name>Brain.API.Managers</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Brain.API.ServiceDefinition\Brain.API.ServiceDefinition.csproj">
       <Project>{6190598d-cfc9-4419-b38a-56a325687646}</Project>
       <Name>Brain.API.ServiceDefinition</Name>
