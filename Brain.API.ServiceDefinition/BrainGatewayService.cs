@@ -30,6 +30,41 @@ namespace Brain.API.ServiceDefinition
             return response;
         }
 
+        public GetUserResponse Get(GetUserRequest request)
+        {
+            GetUserResponse response = new GetUserResponse();
+            response.User = new User()
+            {
+                Name = "Adib"
+            };
+            return response;
+        }
 
+        public GetGroupsForAUserResponse Get(GetGroupsForAUserRequest request)
+        {
+            GetGroupsForAUserResponse response = new GetGroupsForAUserResponse();
+
+            return response;
+        }
+
+        public GetAllGroupsResponse Get(GetAllGroupsRequest request)
+        {
+            GetAllGroupsResponse response = new GetAllGroupsResponse();
+
+            return response;
+        }
+
+        public GetGroupsResponse Get(GetGroupsRequest request)
+        {
+            GetGroupsResponse response = new GetGroupsResponse();
+
+            return response;
+        }
+        public GetGroupResponse Get(GetGroupRequest request)
+        {
+            GetGroupResponse response = new GetGroupResponse();
+
+            return response;
+        }
     }
 }

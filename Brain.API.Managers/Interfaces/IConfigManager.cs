@@ -12,5 +12,9 @@ namespace Brain.API.Managers.Interfaces
 
         string GetPasswordFileFullPath();
 
+        int GetUserParameterLength();
+
+        int GetGroupParameterLength();
+
     }
 }

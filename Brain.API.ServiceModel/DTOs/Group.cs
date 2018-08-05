@@ -6,18 +6,10 @@ using System.Threading.Tasks;
 
 namespace Brain.API.ServiceModel.DTOs
 {
-    public class User
+    public class Group
     {
         public string Name { get; set; }
-
-        public string Uid { get; set; }
-
         public string Gid { get; set; }
-
-        public string Comment { get; set; }
-
-        public string Home { get; set; }
-
-        public string Shell { get; set; }
+        public List<string> Members { get; set; }
     }
 }

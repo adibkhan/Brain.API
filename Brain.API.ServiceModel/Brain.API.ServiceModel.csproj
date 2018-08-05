@@ -56,8 +56,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="DTOs\Group.cs" />
     <Compile Include="DTOs\User.cs" />
+    <Compile Include="Messages\GetGroupsRequest.cs" />
+    <Compile Include="Messages\GetAllGroupsRequest.cs" />
+    <Compile Include="Messages\GetGroupsResponse.cs" />
+    <Compile Include="Messages\GetAllGroupsResponse.cs" />
+    <Compile Include="Messages\GetGroupRequest.cs" />
+    <Compile Include="Messages\GetUserRequest.cs" />
+    <Compile Include="Messages\GetGroupsForAUserRequest.cs" />
+    <Compile Include="Messages\GetGroupResponse.cs" />
     <Compile Include="Messages\GetUsersRequest.cs" />
+    <Compile Include="Messages\GetUserResponse.cs" />
+    <Compile Include="Messages\GetGroupsForAUserResponse.cs" />
     <Compile Include="Messages\GetUsersResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
