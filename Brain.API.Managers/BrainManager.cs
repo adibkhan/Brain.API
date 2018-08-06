@@ -55,7 +55,7 @@ namespace Brain.API.Managers
             List<User> allUsers = _userManager.GetUsers();
             return allUsers.FirstOrDefault(x => x.Uid == uid);
         }
-      
+
         public Group GetGroup(string gid)
         {
             var allGroups = GetGroups();
@@ -82,10 +82,14 @@ namespace Brain.API.Managers
 
             result = _groupManager.AddToExistingGroups(ref result, groupsByGid);
             //Fix this
-            var groupsByMembers = allGroups.Where(x => x.Members.Intersect(group.Members).Count() == group.Members.Count()).ToList();
 
-            result = _groupManager.AddToExistingGroups(ref result, groupsByMembers);
+            List<Group> groupsByMembers;
+            if (group.Members.Count > 0)
+            {
+                groupsByMembers = allGroups.Where(x => x.Members.Intersect(group.Members).Count() == group.Members.Count()).ToList();
+                result = _groupManager.AddToExistingGroups(ref result, groupsByMembers);
 
+            }
 
             return result;
         }
