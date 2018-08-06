@@ -8,9 +8,11 @@ namespace Brain.API
     {
         public static void Register (Container container)
         {
+            // Autowiring dependencies
             container.Register<IConfigManager>(x => new ConfigManager());
-
-            container.Register<IBrainManager>(x => new BrainManager(x.Resolve<IConfigManager>()));
+            container.Register<IGroupManager>(x => new GroupManager(x.Resolve<IConfigManager>()));
+            container.Register<IUserManager>(x => new UserManager(x.Resolve<IConfigManager>()));
+            container.Register<IBrainManager>(x => new BrainManager(x.Resolve<IGroupManager>(), x.Resolve<IUserManager>()));
         }
 
     }

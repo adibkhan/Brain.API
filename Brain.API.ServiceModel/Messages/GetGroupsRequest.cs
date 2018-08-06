@@ -3,9 +3,9 @@ using Brain.API.ServiceModel.DTOs;
 
 namespace Brain.API.ServiceModel.Messages
 {
-    [Route("/GetGroups", Verbs = "GET", Notes = "SearchForGroups")]
+    [Route("/Group/GetGroups", Verbs = "GET", Notes = "SearchForGroups")]
     public class GetGroupsRequest : IReturn<GetGroupsResponse>
     {
-        public Group group { get; set; }
+        public Group Group { get; set; }
     }
 }

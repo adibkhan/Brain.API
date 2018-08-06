@@ -12,8 +12,8 @@ namespace Brain.API.Managers
         private const string groupFilePath = "GroupFilePath";
         private const string passwordfileName = "passwordfileName";
         private const string passwordfilePath = "passwordfilePath";
-        private const int userParameterLength = 6;
-        private const int groupParameterLength = 4;
+        private const int userPropertiesLength = 6;
+        private const int groupPropertiesLength = 3;
 
         public string GetFileFullPath(string fName, string fPath)
         {
@@ -66,15 +66,15 @@ namespace Brain.API.Managers
             }
         }
 
-        public int GetUserParameterLength()
+        public int GetUserPropertiesLength()
         {
-            return userParameterLength;
+            return userPropertiesLength;
         }
 
 
-        public int GetGroupParameterLength()
+        public int GetGroupPropertiesLength()
         {
-            return groupParameterLength;
+            return groupPropertiesLength;
         }
     }
 }
