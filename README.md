@@ -36,7 +36,7 @@
 | GET /Group/GetGroups		    |{Name:devops,Gid:1234,Members:[adib,eugene]}	<br/> 
 | GET /Group/GetGroups/{uid}| 1	<br/>											
 
-* Make sure to remove trailing spaces while testing the routes.
+* Make sure to remove trailing spaces from the data while testing the routes.
 
 ## Other Notes
 * Instructions on how to use swagger is provided in the Installtion folder
