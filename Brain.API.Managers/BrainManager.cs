@@ -57,7 +57,7 @@ namespace Brain.API.Managers
 
         public Group GetGroup(string gid)
         {
-            var allGroups = GetGroups();
+            var allGroups = _groupManager.GetGroups(); ;
             var result = allGroups.FirstOrDefault(x => x.Gid.Equals(gid));
             return result;
         }

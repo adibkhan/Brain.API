@@ -10,18 +10,18 @@
 | Brain.API.Console | Allows hosting of the API without IIS
 | Brain.API.Managers | Contains business logic										
 | Brain.API.ServiceDefinition | Contains methods for the routes
-| Brain.API.ServiceModel | Contains DTOs and Routes
+| Brain.API.ServiceModel | Contains entities, request and response objects
 | Brain.API.UnitTest | Contains sample unit tests
 
 ## Instructions on how to run the service.
 
-## Without visual studio
+### Without visual studio
 * Copy the Installation.zip file from [Installation](https://github.com/adibkhan/Brain.API/tree/master/Installation) to a local folder and unzip.
 * Run the Brain.API.Console exe. 
 * Open a browser and go to http://localhost:1234
 * Under PluginLinks click Swagger UI
 
-## With visual studio
+### With visual studio
 * Open the Brain.API.sln file in a Visual studio 2017
 * Set Brain.API.Console project as the startup project
 * Start the console app
@@ -48,3 +48,7 @@
 
 ## Other Notes
 * Instructions on how to use swagger is provided in the Installtion folder
+* Route validation, logging was intentionally left out of this project.
+* To keep thisngs simple all entity properties are declared as strings
+* Dependency inject has been used in the manager classes to help with unit testing.
+
