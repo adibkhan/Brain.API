@@ -2,8 +2,16 @@
 
 ## Properties
 * This API is created using the following technologies: ServiceStack, ASP.Net, MOQ, Funq, Swagger
-* It
+* The solution is divided into following projects
 
+|	Project|Description
+-------|----------------
+| Brain.API | Web application 		
+| Brain.API.Console | Allows hosting of the API without IIS
+| Brain.API.Managers | Contains business logic										
+| Brain.API.ServiceDefinition | Contains methods for the routes
+| Brain.API.ServiceModel | Contains DTOs and Routes
+| Brain.API.UnitTest | Contains sample unit tests
 
 ## Instructions on how to run the service.
 
@@ -28,13 +36,13 @@
 * LocalHost: Set the local host for the api. This is available only in the Brain.API.Console application.
 
 ## Data to test the routes
-|	Route|Test data  <br/>
+|	Route|Test data 
 -------|----------------
-| GET /User/GetUser/{uid}	  | 1 <br/>			
-| GET /User/GetUsers		      |{Name:adib}, {Name:adib,Uid:12345,Gid:1002}	<br/>
-| GET /Group/GetGroup/{gid}	| 1001 <br/>											
-| GET /Group/GetGroups		    |{Name:devops,Gid:1234,Members:[adib,eugene]}	<br/> 
-| GET /Group/GetGroups/{uid}| 1	<br/>											
+| GET /User/GetUser/{uid}| 1 		
+| GET /User/GetUsers|{Name:adib}, {Name:adib,Uid:12345,Gid:1002}	
+| GET /Group/GetGroup/{gid}	| 1001 											
+| GET /Group/GetGroups|{Name:devops,Gid:1234,Members:[adib,eugene]}
+| GET /Group/GetGroups/{uid}| 1											
 
 * Make sure to remove trailing spaces from the data while testing the routes.
 
