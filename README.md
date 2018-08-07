@@ -1,6 +1,4 @@
 # Brain.API
-
-## Properties
 * This API is created using the following technologies: ServiceStack, ASP.Net, MOQ, Funq, Swagger
 * The solution is divided into following projects
 
