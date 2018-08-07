@@ -28,7 +28,6 @@ namespace Brain.API.Managers
             List<User> allUsers = _userManager.GetUsers();
             List<User> result = new List<User>();
 
-            // Could not use reflection due to compilation error
             List<User> usersByParameter = allUsers.Where(x => x.Name == user.Name).ToList();
             result = _userManager.AddToExistingUsers(result, usersByParameter);
 
@@ -55,7 +54,7 @@ namespace Brain.API.Managers
             List<User> allUsers = _userManager.GetUsers();
             return allUsers.FirstOrDefault(x => x.Uid == uid);
         }
-      
+
         public Group GetGroup(string gid)
         {
             var allGroups = GetGroups();
@@ -81,11 +80,14 @@ namespace Brain.API.Managers
             var groupsByGid = allGroups.Where(x => x.Gid.Equals(group.Gid)).ToList();
 
             result = _groupManager.AddToExistingGroups(ref result, groupsByGid);
-            //Fix this
-            var groupsByMembers = allGroups.Where(x => x.Members.Intersect(group.Members).Count() == group.Members.Count()).ToList();
 
-            result = _groupManager.AddToExistingGroups(ref result, groupsByMembers);
+            List<Group> groupsByMembers;
+            if (group.Members.Count > 0)
+            {
+                groupsByMembers = allGroups.Where(x => x.Members.Intersect(group.Members).Count() == group.Members.Count()).ToList();
+                result = _groupManager.AddToExistingGroups(ref result, groupsByMembers);
 
+            }
 
             return result;
         }

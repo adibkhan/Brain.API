@@ -28,15 +28,20 @@ namespace Brain.API.Managers
 
             if (string.IsNullOrEmpty(filePath))
             {
-                // If not available check the application default directory
-                filePath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+                throw new Exception($"{fName} could not be found.");
             }
 
             string fullPath = Path.Combine(filePath, fileName);
 
             if(!File.Exists(fullPath))
             {
-                throw new Exception($"{fName} could not be found.");
+                // If not available check the application default directory
+                filePath = Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory) + @"\UnixFiles\";
+                fullPath = Path.Combine(filePath, fileName);
+                if (!File.Exists(fullPath))
+                {
+                    throw new Exception($"{fName} could not be found.");
+                }
             }
 
             return fullPath;
@@ -52,13 +57,11 @@ namespace Brain.API.Managers
             return GetFileFullPath(passwordfileName, passwordfilePath);
         }
 
-
         public string ReadConfig(string configName)
         {
             try
             {
                 return ConfigurationManager.AppSettings[configName];
-
             }
             catch (Exception ex)
             {
@@ -70,7 +73,6 @@ namespace Brain.API.Managers
         {
             return userPropertiesLength;
         }
-
 
         public int GetGroupPropertiesLength()
         {

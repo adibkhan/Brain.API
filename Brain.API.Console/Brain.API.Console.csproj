@@ -4,15 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6228527A-562B-4401-ACAA-7CD19CE4EF96}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Brain.API.ServiceModel</RootNamespace>
-    <AssemblyName>Brain.API.ServiceModel</AssemblyName>
+    <ProjectGuid>{B891BA34-7D0B-43FC-BB09-B784C400DEB3}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Brain.API.Console</RootNamespace>
+    <AssemblyName>Brain.API.Console</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +23,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -32,6 +34,9 @@
   <ItemGroup>
     <Reference Include="ServiceStack, Version=5.0.0.0, Culture=neutral, PublicKeyToken=02c12cbda47e6587, processorArchitecture=MSIL">
       <HintPath>..\packages\ServiceStack.5.1.0\lib\net45\ServiceStack.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Api.Swagger, Version=5.0.0.0, Culture=neutral, PublicKeyToken=02c12cbda47e6587, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.Api.Swagger.5.1.0\lib\net45\ServiceStack.Api.Swagger.dll</HintPath>
     </Reference>
     <Reference Include="ServiceStack.Client, Version=5.0.0.0, Culture=neutral, PublicKeyToken=02c12cbda47e6587, processorArchitecture=MSIL">
       <HintPath>..\packages\ServiceStack.Client.5.1.0\lib\net45\ServiceStack.Client.dll</HintPath>
@@ -46,6 +51,7 @@
       <HintPath>..\packages\ServiceStack.Text.5.1.0\lib\net45\ServiceStack.Text.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -55,34 +61,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DTOs\Group.cs" />
-    <Compile Include="DTOs\User.cs" />
-    <Compile Include="Messages\GetGroupsRequest.cs" />
-    <Compile Include="Messages\GetAllGroupsRequest.cs" />
-    <Compile Include="Messages\GetGroupsResponse.cs" />
-    <Compile Include="Messages\GetAllGroupsResponse.cs" />
-    <Compile Include="Messages\GetGroupRequest.cs" />
-    <Compile Include="Messages\GetUserRequest.cs" />
-    <Compile Include="Messages\GetGroupsForAUserRequest.cs" />
-    <Compile Include="Messages\GetGroupResponse.cs" />
-    <Compile Include="Messages\GetAllUsersRequest.cs" />
-    <Compile Include="Messages\GetUsersRequest.cs" />
-    <Compile Include="Messages\GetUserResponse.cs" />
-    <Compile Include="Messages\GetGroupsForAUserResponse.cs" />
-    <Compile Include="Messages\GetAllUsersResponse.cs" />
-    <Compile Include="Messages\GetUsersResponse.cs" />
+    <Compile Include="AppHost.cs" />
+    <Compile Include="ContainerManager.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="UnixFiles\groups.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="UnixFiles\passwd.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <ProjectReference Include="..\Brain.API.Managers\Brain.API.Managers.csproj">
+      <Project>{781b05f8-b6c4-4846-8b28-3d647fcc5e9f}</Project>
+      <Name>Brain.API.Managers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Brain.API.ServiceDefinition\Brain.API.ServiceDefinition.csproj">
+      <Project>{6190598d-cfc9-4419-b38a-56a325687646}</Project>
+      <Name>Brain.API.ServiceDefinition</Name>
+    </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
