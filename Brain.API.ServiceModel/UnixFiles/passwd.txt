@@ -1,0 +1,4 @@
+adib:1:1001:test:/home/adib:/bin/bash
+tony:2:1002:test:/home/tony:/bin/false
+eugene:3:1001:test:/home/eugene:/bin/bash
+allen:4:1002:test:/home/allen:/bin/false

@@ -28,7 +28,6 @@ namespace Brain.API.Managers
             List<User> allUsers = _userManager.GetUsers();
             List<User> result = new List<User>();
 
-            // Could not use reflection due to compilation error
             List<User> usersByParameter = allUsers.Where(x => x.Name == user.Name).ToList();
             result = _userManager.AddToExistingUsers(result, usersByParameter);
 
@@ -81,7 +80,6 @@ namespace Brain.API.Managers
             var groupsByGid = allGroups.Where(x => x.Gid.Equals(group.Gid)).ToList();
 
             result = _groupManager.AddToExistingGroups(ref result, groupsByGid);
-            //Fix this
 
             List<Group> groupsByMembers;
             if (group.Members.Count > 0)
