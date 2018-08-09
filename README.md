@@ -13,27 +13,28 @@
 | Brain.API.ServiceModel | Contains entities, request and response objects
 | Brain.API.UnitTest | Contains sample unit tests
 
-## Instructions on how to run the API
-
-### Without Visual Studio
-* Copy the Installation.zip file from [Installation](https://github.com/adibkhan/Brain.API/tree/master/Installation) to a local folder and unzip.
-* Run the Brain.API.Console exe.
-* Open a browser and go to http://localhost:1234.
-* Under PluginLinks click Swagger UI.
-
-### With Visual Studio
-* Open the Brain.API.sln file in a Visual Studio 2017.
-* Set Brain.API.Console project as the startup project.
-* Start the console app.
-* Open a browser and go to http://localhost:1234.
-* Under PluginLinks click Swagger UI.
-
 ## Configuration values In App.Config and Web.Config
 * GroupFileName: Name of the group file.
 * PasswordfileName: Name of the password file.
 * GroupFilePath: Location of the groupfile path. If this is not available it will default to the application root directory.
 * PasswordfilePath:  Location of the password path. If this is not available it will default to the application root directory.
 * LocalHost: Set the local host for the api. This is available only in the Brain.API.Console application App.COnfig
+
+## Instructions on how to run the API
+
+### Without Visual Studio
+* Copy the Installation.zip file from [Installation](https://github.com/adibkhan/Brain.API/tree/master/Installation) to a local folder and unzip.
+* Run the Brain.API.Console exe.
+* Open a browser and go to http://localhost:1234.
+* Under PluginLinks click Swagger UI (or use any other preferred HTTP client).
+### With Visual Studio
+* Open the Brain.API.sln file in a Visual Studio 2017.
+* Set Brain.API.Console project as the startup project.
+* Start the console app.
+* Open a browser and go to http://localhost:1234.
+* Under PluginLinks click Swagger UI (or use any other preferred HTTP client).
+
+** Instructions on how to use swagger is provided in the SwaggerUi tutorial.docx file in [Installation](https://github.com/adibkhan/Brain.API/tree/master/Installation) folder.
 
 ## Test data
 |	Route|Test data 
@@ -47,7 +48,6 @@
 * Make sure to remove trailing spaces from the data while testing the routes.
 
 ## Other notes
-* Instructions on how to use swagger is provided in the SwaggerUi tutorial.docx file in [Installation](https://github.com/adibkhan/Brain.API/tree/master/Installation) folder.
 * To keep things simple, all entity properties are declared as strings and route validation and logging was intentionally left out of this project.
 * Dependency injection has been used in the manager classes to help with unit testing.
 
