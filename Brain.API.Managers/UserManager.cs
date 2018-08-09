@@ -5,6 +5,9 @@ using System.Collections.Generic;
 
 namespace Brain.API.Managers
 {
+    /// <summary>
+    /// Manager to handle user realted functionalities
+    /// </summary>
     public class UserManager : IUserManager
     {
         IConfigManager _configManager;
@@ -32,10 +35,8 @@ namespace Brain.API.Managers
             List<User> users = new List<User>();
             foreach (var line in lines)
             {
-
                 users.Add(MapStringToUser(line));
             }
-
             return users;
         }
 

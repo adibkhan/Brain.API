@@ -3,6 +3,7 @@ using ServiceStack;
 using Brain.API.ServiceModel.Messages;
 using Brain.API.ServiceModel.DTOs;
 using Brain.API.Managers.Interfaces;
+using System;
 
 namespace Brain.API.ServiceDefinition
 {
@@ -18,9 +19,16 @@ namespace Brain.API.ServiceDefinition
         public GetUsersResponse Get(GetUsersRequest request)
         {
             GetUsersResponse response = new GetUsersResponse();
-
-            response.Users = _brainManager.GetUsers(request.User);
-
+            // Top level try catch to capture any error
+            try
+            {
+                response.Users = _brainManager.GetUsers(request.User);
+            }
+            catch (Exception ex)
+            {
+                // Servicestack automatically adds the stacktrace in the response object
+                throw ex;
+            }
             return response;
         }
 
@@ -28,8 +36,14 @@ namespace Brain.API.ServiceDefinition
         {
             GetAllUsersResponse response = new GetAllUsersResponse();
 
-            response.Users = _brainManager.GetUsers();
-
+            try
+            {
+                response.Users = _brainManager.GetUsers();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
             return response;
         }
 
@@ -46,10 +60,18 @@ namespace Brain.API.ServiceDefinition
         {
             GetGroupsForAUserResponse response = new GetGroupsForAUserResponse();
 
-            if (!string.IsNullOrEmpty(request.Uid))
+            try
             {
-                response.Groups = _brainManager.GetGroupsForUsers(request.Uid);
+                if (!string.IsNullOrEmpty(request.Uid))
+                {
+                    response.Groups = _brainManager.GetGroupsForUsers(request.Uid);
+                }
             }
+            catch (Exception ex)
+            {
+                throw;
+            }
+
             return response;
         }
 
@@ -72,7 +94,7 @@ namespace Brain.API.ServiceDefinition
             GetGroupResponse response = new GetGroupResponse();
             string gid = request.Gid;
 
-            Group result =  _brainManager.GetGroup(gid);
+            Group result = _brainManager.GetGroup(gid);
             response.Group = result ?? throw HttpError.NotFound($"Group {gid} does not exist");
             return response;
         }

@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace Brain.API.Managers
 {
+    /// <summary>
+    /// Manager to handle group related functionalities
+    /// </summary>
     public class GroupManager : IGroupManager
     {
         IConfigManager _configManager;
@@ -36,7 +39,6 @@ namespace Brain.API.Managers
             List<Group> groups = new List<Group>();
             foreach (var line in lines)
             {
-
                 groups.Add(MapStringToGroup(line));
             }
 

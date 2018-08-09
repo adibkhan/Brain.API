@@ -6,6 +6,9 @@ using System.Reflection;
 
 namespace Brain.API.Managers
 {
+    /// <summary>
+    /// Manager containing all configuration logic
+    /// </summary>
     public class ConfigManager : IConfigManager
     {
         private const string groupFileName = "GroupFileName";

@@ -8,7 +8,6 @@ namespace Brain.API
 {
     public class AppHost : AppHostBase
     {
-
         public AppHost() : base(ServiceDefinitionInfo.Name, ServiceDefinitionInfo.Assembly) { }
 
         public override void Configure(Container container)

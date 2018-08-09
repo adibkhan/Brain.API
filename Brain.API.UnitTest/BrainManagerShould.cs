@@ -80,5 +80,23 @@ namespace Brain.API.UnitTest
             // Assert
             Assert.AreEqual(user, result);
         }
+
+        [TestMethod]
+        public void GetGroup_ForAGid_DoesNotReturnGroup()
+        {
+            // Arrange
+            Group group = _fixture.Create<Group>();
+
+            List<Group> groups = _fixture.Create<List<Group>>();
+
+            _mockGroupManager.Setup(x => x.GetGroups()).Returns(groups);
+
+            // Act
+            var result = _brainManager.GetGroup(It.IsAny<string>());
+
+
+            // Assert
+            Assert.AreEqual(null, result);
+        }
     }
 }
