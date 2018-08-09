@@ -7,6 +7,9 @@ using Brain.API.ServiceModel.DTOs;
 
 namespace Brain.API.Managers
 {
+    /// <summary>
+    /// Main manager that ties user and group manager to implement route functionalities 
+    /// </summary>
     public class BrainManager : IBrainManager
     {
         IGroupManager _groupManager;
@@ -86,9 +89,7 @@ namespace Brain.API.Managers
             {
                 groupsByMembers = allGroups.Where(x => x.Members.Intersect(group.Members).Count() == group.Members.Count()).ToList();
                 result = _groupManager.AddToExistingGroups(ref result, groupsByMembers);
-
             }
-
             return result;
         }
 
@@ -101,7 +102,6 @@ namespace Brain.API.Managers
             if (user != null)
             {
                 result = allGroups.Where(x => x.Members.Contains(user.Name)).ToList();
-
             }
             return result;
         }

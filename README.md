@@ -28,12 +28,12 @@
 * Open a browser and go to http://localhost:1234.
 * Under PluginLinks click Swagger UI.
 
-## Configuration values
+## Configuration values In App.Config and Web.Config
 * GroupFileName: Name of the group file.
 * PasswordfileName: Name of the password file.
 * GroupFilePath: Location of the groupfile path. If this is not available it will default to the application root directory.
 * PasswordfilePath:  Location of the password path. If this is not available it will default to the application root directory.
-* LocalHost: Set the local host for the api. This is available only in the Brain.API.Console application.
+* LocalHost: Set the local host for the api. This is available only in the Brain.API.Console application App.COnfig
 
 ## Test data
 |	Route|Test data 
@@ -47,7 +47,7 @@
 * Make sure to remove trailing spaces from the data while testing the routes.
 
 ## Other notes
-* Instructions on how to use swagger is provided in the [Installation](https://github.com/adibkhan/Brain.API/tree/master/Installation) folder.
+* Instructions on how to use swagger is provided in the SwaggerUi tutorial.docx file in [Installation](https://github.com/adibkhan/Brain.API/tree/master/Installation) folder.
 * To keep things simple, all entity properties are declared as strings and route validation and logging was intentionally left out of this project.
 * Dependency injection has been used in the manager classes to help with unit testing.
 
