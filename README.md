@@ -26,13 +26,13 @@
 * Copy the Installation.zip file from [Installation](https://github.com/adibkhan/Brain.API/tree/master/Installation) to a local folder and unzip.
 * Run the Brain.API.Console exe.
 * Open a browser and go to http://localhost:1234.
-* Under PluginLinks click Swagger UI (or use any other preferred HTTP client).
+* Under PluginLinks click Swagger UI to test the API (or use any other preferred HTTP client).
 ### With Visual Studio
 * Open the Brain.API.sln file in a Visual Studio 2017.
 * Set Brain.API.Console project as the startup project.
 * Start the console app.
 * Open a browser and go to http://localhost:1234.
-* Under PluginLinks click Swagger UI (or use any other preferred HTTP client).
+* Under PluginLinks click Swagger UI to test the API (or use any other preferred HTTP client).
 
 ** Instructions on how to use swagger is provided in the SwaggerUI tutorial.docx file in [Installation](https://github.com/adibkhan/Brain.API/tree/master/Installation) folder.
 
