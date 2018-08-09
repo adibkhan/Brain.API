@@ -85,7 +85,7 @@ namespace Brain.API.Managers
             result = _groupManager.AddToExistingGroups(ref result, groupsByGid);
 
             List<Group> groupsByMembers;
-            if (group.Members.Count > 0)
+            if (group.Members?.Count > 0)
             {
                 groupsByMembers = allGroups.Where(x => x.Members.Intersect(group.Members).Count() == group.Members.Count()).ToList();
                 result = _groupManager.AddToExistingGroups(ref result, groupsByMembers);
