@@ -34,7 +34,7 @@
 * Open a browser and go to http://localhost:1234.
 * Under PluginLinks click Swagger UI (or use any other preferred HTTP client).
 
-** Instructions on how to use swagger is provided in the SwaggerUi tutorial.docx file in [Installation](https://github.com/adibkhan/Brain.API/tree/master/Installation) folder.
+** Instructions on how to use swagger is provided in the SwaggerUI tutorial.docx file in [Installation](https://github.com/adibkhan/Brain.API/tree/master/Installation) folder.
 
 ## Test data
 |	Route|Test data 
@@ -45,7 +45,7 @@
 | GET /Group/GetGroups|{Name:devops,Gid:1234,Members:[adib,eugene]}
 | GET /Group/GetGroups/{uid}| 1											
 
-* Make sure to remove trailing spaces from the data while testing the routes.
+** Make sure to remove trailing spaces from the data while testing the routes.
 
 ## Other notes
 * To keep things simple, all entity properties are declared as strings and route validation and logging was intentionally left out of this project.
